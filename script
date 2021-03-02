@@ -1,0 +1,65 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local Aimbot = Instance.new("TextLabel")
+local StupidHub = Instance.new("TextLabel")
+local Esp = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.503105581, 0, 0.254452914, 0)
+Frame.Size = UDim2.new(0, 300, 0, 100)
+Frame.Style = Enum.FrameStyle.RobloxRound
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = Frame
+Aimbot.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Aimbot.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Aimbot.Position = UDim2.new(0.0779999942, 0, 0.409999996, 0)
+Aimbot.Size = UDim2.new(0, 100, 0, 50)
+Aimbot.Font = Enum.Font.Ubuntu
+Aimbot.Text = "Aimbot = E"
+Aimbot.TextColor3 = Color3.fromRGB(255, 255, 255)
+Aimbot.TextSize = 14.000
+
+StupidHub.Name = "Stupid Hub"
+StupidHub.Parent = Frame
+StupidHub.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+StupidHub.BorderColor3 = Color3.fromRGB(255, 255, 255)
+StupidHub.Position = UDim2.new(0.267923594, 0, -0.0172000099, 0)
+StupidHub.Size = UDim2.new(0, 130, 0, 28)
+StupidHub.Font = Enum.Font.Ubuntu
+StupidHub.Text = "Stupid Hub"
+StupidHub.TextColor3 = Color3.fromRGB(255, 255, 255)
+StupidHub.TextSize = 20.000
+
+Esp.Name = "Esp"
+Esp.Parent = Frame
+Esp.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Esp.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Esp.Position = UDim2.new(0.573333383, 0, 0.409999996, 0)
+Esp.Size = UDim2.new(0, 100, 0, 50)
+Esp.Font = Enum.Font.Ubuntu
+Esp.Text = "ESP = T"
+Esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp.TextSize = 14.000
+
+Frame.Active = true
+Frame.Draggable = true
+
+function onKeyPress(inputObject, gameProcessedEvent)
+	if inputObject.KeyCode == Enum.KeyCode.RightControl then
+		if Frame.Visible == false then
+			Frame.Visible = true
+		else
+			Frame.Visible = false
+		end
+	end
+end
+
+game:GetService("UserInputService").InputBegan:connect(onKeyPress)
